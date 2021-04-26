@@ -57,6 +57,12 @@ public class OrdreController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         refreshTable();
+        
+        searchField.textProperty().addListener((observable, oldValue, newValue) ->
+           
+                dynamiSearch(newValue)
+
+);
     }    
     
     
@@ -116,4 +122,22 @@ priceCol.setCellValueFactory(new PropertyValueFactory<Ordre,Integer>("totalPrice
 
       orderTable.setItems(list);
     }
+    
+    private void dynamiSearch(String value){
+    System.out.println(value);
+        if(value.isEmpty()){
+        refreshTable();
+        }else{
+        ObservableList<Ordre> list = ordreService.rechercher(value);
+         
+        idCol.setCellValueFactory(new PropertyValueFactory<Ordre,Integer>("id"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<Ordre,String>("checkoutDate"));
+        phoneCol.setCellValueFactory(new PropertyValueFactory<Ordre,Integer>("userPhone"));
+        zipCol.setCellValueFactory(new PropertyValueFactory<Ordre,Integer>("zipcode"));
+       
+        cityCol.setCellValueFactory(new PropertyValueFactory<Ordre,String>("city"));
+priceCol.setCellValueFactory(new PropertyValueFactory<Ordre,Integer>("totalPrice"));
+
+      orderTable.setItems(list);
+    }}
 }

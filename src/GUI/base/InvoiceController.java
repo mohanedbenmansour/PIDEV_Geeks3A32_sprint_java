@@ -81,6 +81,10 @@ InvoiceService invoiceService=new InvoiceService();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         refreshTable();
+        searchField.textProperty().addListener((observable, oldValue, newValue) ->
+    dynamiSearch(newValue)
+);
+        
     }    
 
   
@@ -179,7 +183,7 @@ invoiceService.modifier(invoice);
     @FXML
     private void searchInvoice() {
         
-         ObservableList<Invoice> list = invoiceService.rechercher(searchField.getText());
+         ObservableList<Invoice> list = invoiceService.rechercher("invoice");
          
         idCol.setCellValueFactory(new PropertyValueFactory<Invoice,Integer>("id"));
         nameCol.setCellValueFactory(new PropertyValueFactory<Invoice,String>("name"));
@@ -190,5 +194,22 @@ invoiceService.modifier(invoice);
 
 
       invoiceTable.setItems(list);
+    }
+    
+        private void dynamiSearch(String value){
+            if (value.isEmpty()){
+                refreshTable();
+            }else{
+      ObservableList<Invoice> list = invoiceService.rechercher(value);
+         
+        idCol.setCellValueFactory(new PropertyValueFactory<Invoice,Integer>("id"));
+        nameCol.setCellValueFactory(new PropertyValueFactory<Invoice,String>("name"));
+        emailCol.setCellValueFactory(new PropertyValueFactory<Invoice,String>("email"));
+        phoneCol.setCellValueFactory(new PropertyValueFactory<Invoice,Integer>("phone"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<Invoice,String>("creationDate"));
+        totalCol.setCellValueFactory(new PropertyValueFactory<Invoice,Integer>("totalCost"));
+
+
+      invoiceTable.setItems(list);}
     }
 }

@@ -32,7 +32,7 @@ public class Gestion_ordre extends Application{
     
      @Override
     public void start(Stage primaryStage) throws IOException {
-       Parent  root = FXMLLoader.load(getClass().getResource("../GUI/base/Ordre.fxml"));
+       Parent  root = FXMLLoader.load(getClass().getResource("../GUI/base/Invoice.fxml"));
         Scene scene = new Scene(root);
         
         primaryStage.setTitle("PIDEV");
