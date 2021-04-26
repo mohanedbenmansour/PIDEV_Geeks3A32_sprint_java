@@ -17,16 +17,15 @@
       </Text>
       <TableView fx:id="orderTable" layoutX="16.0" layoutY="115.0" prefHeight="243.0" prefWidth="568.0">
         <columns>
-          <TableColumn fx:id="idCol" prefWidth="75.0" text="id" />
-          <TableColumn fx:id="dateCol" prefWidth="92.0" text="checkout date" />
-            <TableColumn fx:id="phoneCol" prefWidth="86.0" text="userphone" />
-            <TableColumn fx:id="zipCol" prefWidth="86.0" text="zip code" />
+          <TableColumn fx:id="dateCol" prefWidth="71.0" text="checkout date" />
+            <TableColumn fx:id="phoneCol" prefWidth="102.0" text="userphone" />
+            <TableColumn fx:id="zipCol" prefWidth="91.0" text="zip code" />
             <TableColumn fx:id="cityCol" prefWidth="86.0" text="city" />
             <TableColumn fx:id="priceCol" prefWidth="86.0" text="total price" />
+            <TableColumn fx:id="test" minWidth="0.0" prefWidth="131.0" text="pdf/delete" />
         </columns>
       </TableView>
-      <Button fx:id="sortbtn" layoutX="545.0" layoutY="74.0" mnemonicParsing="false" onAction="#sortOrder" text="sort" />
+      <Button fx:id="sortbtn" layoutX="504.0" layoutY="74.0" mnemonicParsing="false" onAction="#sortOrder" text="sort" />
       <TextField fx:id="searchField" layoutX="271.0" layoutY="74.0" />
-      <Button fx:id="searchbtn" layoutX="431.0" layoutY="74.0" mnemonicParsing="false" onAction="#searchOrder" text="search" />
    </children>
 </AnchorPane>

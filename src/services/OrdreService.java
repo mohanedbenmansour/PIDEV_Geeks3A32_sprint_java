@@ -93,13 +93,13 @@ private Statement ste;
     @Override
     public void supprimer(Ordre o) {
 try{
-        String request="DELETE FROM `order` WHERE `order`.`id=?";
+        String request="DELETE FROM `order` WHERE `order`.`id`= ?";
    PreparedStatement pst = cnx.prepareStatement(request);
    pst.setInt(1, o.getId());
    pst.executeUpdate();
       System.out.println("ordre supprimé !");
 
-  request="DELETE FROM order_detail where orderr_id=?";
+  request="DELETE FROM order_detail where orderr_id= ?";
     pst = cnx.prepareStatement(request);
    pst.setInt(1, o.getId());
    pst.executeUpdate();
@@ -232,7 +232,6 @@ document.add(chunk);
 Image image=Image.getInstance("logo.png");
 document.add(image);
 document.add(new Paragraph("\n\n"));
-
 chunk = new Chunk("userid: "+o.getId(), font);
 document.add(chunk);
 document.add(new Paragraph("\n"));
