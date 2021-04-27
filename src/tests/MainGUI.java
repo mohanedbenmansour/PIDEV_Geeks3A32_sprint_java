@@ -16,16 +16,28 @@ import javafx.stage.Stage;
  *
  * @author asus
  */
+
+
 public class MainGUI extends Application {
+    
+    public static Stage pStage = new Stage();
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent  root = FXMLLoader.load(getClass().getResource("../views/EventsBack.fxml"));
+        try {
+        Parent  root = FXMLLoader.load(getClass().getResource("../views/event/Show Events.fxml"));
+        //Parent  root = FXMLLoader.load(getClass().getResource("../views/event/EventsBack.fxml"));
+        
         Scene scene = new Scene(root);
         
         primaryStage.setTitle("PIDEV");
         primaryStage.setScene(scene);
         primaryStage.show();
+        pStage = primaryStage;
+        
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     /**
