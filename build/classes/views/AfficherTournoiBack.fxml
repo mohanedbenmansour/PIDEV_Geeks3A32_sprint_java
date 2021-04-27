@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherTournoiBackController">
+   <children>
+      <ImageView fitHeight="45.0" fitWidth="93.0" layoutX="43.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+            <Image url="/images/logo.png" />
+         </image>    
+      </ImageView>
+      <VBox layoutX="28.0" layoutY="16.0" prefHeight="573.0" prefWidth="129.0" style="-fx-border-width: 3px; -fx-border-color: #B3001B; -fx-border-radius: 6px; -fx-background-color: #F1F7ED;">
+         <children>
+            <Button fx:id="EventsBack" mnemonicParsing="false" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #B3001B; -fx-background-radius: 10px;" text="Tournoi" textFill="#393d3f">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="3.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="CategoryEventsBack" mnemonicParsing="false" onAction="#goToCategory" prefHeight="30.0" prefWidth="176.0" style="-fx-background-radius: 10px; -fx-border-color: #B3001B; -fx-border-radius: 10px;" text="Categories" textFill="#b3001b">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="3.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Pane layoutX="171.0" layoutY="16.0" prefHeight="573.0" prefWidth="668.0" style="-fx-border-color: #B3001B; -fx-border-width: 3px; -fx-border-radius: 6px; -fx-background-color: #F1F7ED;">
+         <children>
+            <TableView fx:id="tournoi" layoutX="30.0" layoutY="106.0" onMouseClicked="#handleMouseAction" prefHeight="354.0" prefWidth="552.0" style="-fx-border-color: #B3001B; -fx-border-radius: 5px; -fx-border-width: 2px; -fx-selection-bar: #B3001B;">
+               <columns>
+                  <TableColumn fx:id="colnom" prefWidth="103.0" text="Nom" />
+                  <TableColumn fx:id="coldesc" prefWidth="158.0" text="Description" />
+                  <TableColumn fx:id="coladresse" prefWidth="79.0" text="Adresse" />
+                  <TableColumn fx:id="colnbmax" prefWidth="106.0" text="Nb Max" />
+                  <TableColumn fx:id="colDate" prefWidth="106.0" text="Date Tournoi" />
+               </columns>
+            </TableView>
+            <TextField fx:id="filterField" layoutX="202.0" layoutY="54.0" prefHeight="31.0" prefWidth="294.0" />
+            <Label layoutX="54.0" layoutY="54.0" prefHeight="31.0" prefWidth="134.0" text="     Recherche">
+               <font>
+                  <Font name="Times New Roman Bold" size="19.0" />
+               </font>
+            </Label>
+            <Button fx:id="bt_tri" layoutX="513.0" layoutY="54.0" mnemonicParsing="false" onAction="#Trier" text="Trier" />
+            <Button fx:id="bt_aff" layoutX="250.0" layoutY="476.0" mnemonicParsing="false" onAction="#GoToAfficheTrback" text="Afficher" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherTournoiController">
+   <children>
+      <Button fx:id="bt_ajout" layoutX="356.0" layoutY="512.0" mnemonicParsing="false" onAction="#AjouterTournoi" text="Ajouter" />
+      <Button fx:id="bt_mod" layoutX="468.0" layoutY="512.0" mnemonicParsing="false" onAction="#update" text="Modifier" />
+      <Button fx:id="bt_supp" layoutX="572.0" layoutY="512.0" mnemonicParsing="false" onAction="#supp" text="Supprimer" />
+      <TableView fx:id="tournoi" layoutX="149.0" layoutY="134.0" onMouseClicked="#handleMouseAction" prefHeight="354.0" prefWidth="552.0">
+        <columns>
+          <TableColumn fx:id="colnom" prefWidth="103.0" text="Nom" />
+          <TableColumn fx:id="coldesc" prefWidth="158.0" text="Description" />
+            <TableColumn fx:id="coladresse" prefWidth="79.0" text="Adresse" />
+            <TableColumn fx:id="colnbmax" prefWidth="106.0" text="Nb Max" />
+            <TableColumn fx:id="colDate" prefWidth="106.0" text="Date Tournoi" />
+        </columns>
+      </TableView>
+      <TextField fx:id="filterField" layoutX="283.0" layoutY="88.0" prefHeight="31.0" prefWidth="319.0" />
+      <Label layoutX="149.0" layoutY="88.0" prefHeight="31.0" prefWidth="134.0" text="     Recherche" />
+      <Button fx:id="bt_tri" layoutX="626.0" layoutY="88.0" mnemonicParsing="false" onAction="#Trier" text="Trier" />
+      <Button fx:id="bt_aff" layoutX="229.0" layoutY="512.0" mnemonicParsing="false" onAction="#GoToAfficheTr" text="Afficher" />
+   </children>
+</AnchorPane>
