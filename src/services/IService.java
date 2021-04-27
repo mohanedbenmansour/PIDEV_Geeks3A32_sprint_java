@@ -5,30 +5,17 @@
  */
 package services;
 
-
-import javafx.collections.ObservableList;
-
+import java.util.List;
 
 /**
  *
- * @author mohan
+ * @author Lenovo
  * @param <T>
- * @param <U>
  */
-public interface IService <T,U>{
-    public void ajouter(T t,U u);
-
-    
+public interface IService<T> {
+    public void ajouter(T t);
     public void supprimer(T t);
-    
     public void modifier(T t);
+    public List<T> afficher();
     
-    public  ObservableList<T> afficher();
-    public  ObservableList<T> afficherParOrdre();
-        public ObservableList<T> rechercher(String s);
-
-    public String sendSms();
-    public void orderPdf(T t);
-    public void riotApi(String s);
-
 }
